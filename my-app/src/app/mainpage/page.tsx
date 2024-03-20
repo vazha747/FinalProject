@@ -1,11 +1,11 @@
 import React from 'react'
-import SideBar from '../navigation/sideBar'
-import Info from './info'
+import HeaderMain from "@/components/ui/headerForMainPage"
+import Info from '@/app/content/contentInfo'
 const page = () => {
   return (
     <div>
       <div>
-      <SideBar />
+      <HeaderMain />
       </div>
       <div>
         <Info />

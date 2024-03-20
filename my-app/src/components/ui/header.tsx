@@ -10,6 +10,7 @@ const Header = () => {
               className="w-6 h-6 text-gray-800 dark:text-white"
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
+
               width="24"
               height="24"
               fill="none"
@@ -28,10 +29,9 @@ const Header = () => {
         </Link>
       </div>
       <div className="p-10 mr-10 ml-10 text-center">
-        <h1>We Provide The Best Products</h1>
+        <h1>Enjoy our list of cars</h1>
         <h2>
-          Our Company Is Well Known In The World For Its Quality And Reliable
-          Products
+          We let you choose your Favorite car and enjoy the beauty of transportation purpose luxurious vehicle
         </h2>
         <h3 className="text-sm text-gray-500">Log In And See It For Your Self</h3>
       </div>

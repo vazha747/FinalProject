@@ -3,39 +3,38 @@ import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-//import { signIn } from "next-auth/client";
-//import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
 const LoginForm = () => {
-  const [email, setEmail] = useState("");
+  const router = useRouter();
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-//  const router = useRouter();
+  const [error, setError] = useState("");
 
-  const onSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-
-    const result = await signIn("credentials", {
-      email,
-      password,
-      redirect: false, // Disable redirecting since we want to handle it manually
-    });
-
-    if (result?.ok) {
-      // Redirect the user to the "/" page
-      router.push("/");
+  const handleLogin = (e) => {
+    e.preventDefault()
+    // Check hardcoded credentials
+    if (
+      (username === "jumbera@gmail.com" && password === "tyabladzeli") ||
+      (username === "admin@gmail.com" && password === "password")
+    ) {
+      //    sessionStorage.setItem("token" , dummyToken);
+      router.push("/mainpage");
+    } else {
+      setError("Invalid username or password");
     }
   };
 
   return (
-    <form onSubmit={onSubmit} className="space-y-8 w-72">
+    <form className="space-y-8 w-72" onSubmit={handleLogin}>
       <div className="grid w-full max-w-sm items-center gap-1.5">
         <Label htmlFor="email">Email</Label>
         <Input
           id="email"
           type="email"
           required
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
         />
       </div>
       <div className="grid w-full max-w-sm items-center gap-1.5">
@@ -49,7 +48,10 @@ const LoginForm = () => {
         />
       </div>
       <div className="w-full">
-        <Button className="w-full">Login</Button>
+        <Button onClick={handleLogin} className="w-full">
+          Login
+        </Button>
+        {error && <p className="text-red-400">{error}</p>}
       </div>
     </form>
   );

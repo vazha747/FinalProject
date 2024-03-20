@@ -1,8 +1,12 @@
 import React from 'react'
+import HeaderMain from "@/components/ui/headerForMainPage"
 
 const page = () => {
   return (
-    <div>page</div>
+    <div>
+      
+      page
+    </div>
   )
 }
 
