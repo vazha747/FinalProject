@@ -1,11 +1,12 @@
 "use client";
-import { useRouter, AppRouterInstance } from "next/navigation";
-import { ParsedUrlQuery } from "querystring";
+import { useRouter } from "next/navigation"; // Corrected import
 import { useEffect, useState } from "react";
 import HeaderMain from "@/components/ui/headerForMainPage";
 import Skeleton from "@/components/ui/skeleton";
-interface CustomRouter extends AppRouterInstance {
-  query: CarParams | null; // Assuming query will contain CarParams or null
+import { ParsedUrlQuery } from "querystring";
+
+interface CustomRouter {
+  query?: CarParams | null; // Updated type
 }
 
 interface CarParams extends ParsedUrlQuery {
@@ -17,12 +18,12 @@ interface CarParams extends ParsedUrlQuery {
 }
 
 const InspectPage = () => {
-  const router = useRouter() as unknown as CustomRouter; // Cast router to CustomRouter type
+  const router = useRouter() as CustomRouter; // Updated casting
   const [carInfo, setCarInfo] = useState<CarParams | null>(null);
 
   useEffect(() => {
-    // Check if router.query is defined
-    if (router.query && Object.keys(router.query).length > 0) {
+    // Check if router.query is defined and has all required fields
+    if (router.query && 'make' in router.query && 'model' in router.query && 'image' in router.query && 'year' in router.query && 'price' in router.query) {
       const { make, model, image, year, price } = router.query;
       setCarInfo({ make, model, image, year, price });
     }
