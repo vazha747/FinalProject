@@ -1,10 +1,10 @@
-'use client'
+"use client";
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation"; // Fixed import
 import cars from "@/app/content/cars.json";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import {Skeleton} from "@nextui-org/react";
+import { Skeleton } from "@nextui-org/react";
 
 const Header = () => {
   const [query, setQuery] = useState("");
@@ -40,11 +40,6 @@ const Header = () => {
     );
   };
 
-  const handleSearch = () => {
-    // Handle search functionality
-    console.log("search");
-  };
-
   const handleClear = () => {
     setQuery(""); // Clear the input text
     setFilteredProducts(cars); // Reset filtered products to original state
@@ -72,12 +67,6 @@ const Header = () => {
           onChange={handleChange}
           className="bg-gray-600 px-2 py-1 rounded-md focus:outline-none"
         />
-        <button
-          onClick={handleSearch}
-          className="bg-blue-500 text-white px-3 py-1 rounded-md"
-        >
-          Search
-        </button>
         <button
           onClick={handleClear}
           className="bg-red-500 text-white px-3 py-1 rounded-md"

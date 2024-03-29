@@ -1,64 +1,97 @@
 "use client";
-import { useRouter } from "next/navigation"; // Corrected import
-import { useEffect, useState } from "react";
-import HeaderMain from "@/components/ui/headerForMainPage";
-import Skeleton from "@/components/ui/skeleton";
-import { ParsedUrlQuery } from "querystring";
+import React, { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import cars from "@/app/content/cars.json"; // Replace with your actual filename
+import Header from '@/components/ui/headerForMainPage'
 
-interface CustomRouter {
-  query?: CarParams | null; // Updated type
-}
 
-interface CarParams extends ParsedUrlQuery {
-  make: string;
-  model: string;
-  image: string;
-  year: string;
-  price: string;
-}
 
 const InspectPage = () => {
-  const router = useRouter() as CustomRouter; // Updated casting
-  const [carInfo, setCarInfo] = useState<CarParams | null>(null);
+
+  const router = useRouter()
+   useEffect (() => {
+    const token = sessionStorage.getItem("token")
+    if (!token) {
+      location.href = "/login"
+    }
+   }, [router])
+
+  const [carId, setCarId] = useState(null);
+  const [carInfo, setCarInfo] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    // Check if router.query is defined and has all required fields
-    if (router.query && 'make' in router.query && 'model' in router.query && 'image' in router.query && 'year' in router.query && 'price' in router.query) {
-      const { make, model, image, year, price } = router.query;
-      setCarInfo({ make, model, image, year, price });
+    // Access search params using URLSearchParams directly
+    const url = new URL(window.location.href); // Create a URL object
+    const searchParams = url.searchParams; // Extract search params
+    const id = searchParams.get("id"); // Get ID from search params
+
+    setCarId(id);
+
+    if (id) {
+      setIsLoading(true);
+      setError(null);
+
+      const fetchCarData = async () => {
+        try {
+          const response = await fetch(`/api/cars/getById?id=${id}`); // Descriptive endpoint
+          if (!response.ok) {
+            throw new Error(`Error fetching car data: ${response.statusText}`);
+          }
+          const data = await response.json();
+          setCarInfo(data);
+        } catch (error) {
+          setError(error.message);
+        } finally {
+          setIsLoading(false);
+        }
+      };
+      console.log(id);
+      fetchCarData();
     }
-  }, [router.query]);
+  }, [router]);
 
-  if (!carInfo) {
-    return (
-      <div>
-        <HeaderMain />
-        <div className="flex justify-center items-center text-center">
-          <h1 className="text-3xl p-5">Loading...</h1>
-        </div>
-        <div className="flex justify-center items-center text-center p-10 gap-64">
-          <Skeleton />
-          <Skeleton />
-        </div>
-      </div>
-    );
+  //// Trying to get the information form Local Storage 
+    
+  useEffect(() => {
+    const storedInfo = localStorage.getItem("selectedCar")
+    
+  try {
+    if (storedInfo) {
+      const parsedInfo = JSON.parse(storedInfo); // Parse JSON string
+      setCarInfo(parsedInfo); // Set car information in state
+    }
+  } catch (error) {
+    console.error("Error parsing car information:", error);
+    // Handle potential parsing errors gracefully (e.g., display an error message)
   }
-
-  const { make, model, image, year, price } = carInfo;
+  }, [router])
 
   return (
     <div>
-      <HeaderMain />
-      <div className="p-10">
-        <h1 className="text-3xl">Car Inspection</h1>
-        <div className="border-xl shadow-2xl border-gray-500 p-3 rounded-xl">
-          <p>Make: {make}</p>
-          <p>Model: {model}</p>
-          <img className="h-64 w-96" src={image} alt={`${make} ${model}`} />
-          <p>Year: {year}</p>
-          <p>Price: ${price}</p>
-        </div>
-      </div>
+      <Header />
+      {carInfo ? (
+        <>
+          <h1 className="text-3xl p-10">Car Inspection</h1>
+          <div className="border-xl shadow-2xl border-gray-500 p-3 rounded-xl">
+            <p>Make: {carInfo.make}</p>
+            <p>Model: {carInfo.model}</p>
+            <img
+              className="h-64 w-96"
+              src={carInfo.image} 
+              alt={`${carInfo.make} ${carInfo.model}`}
+            />
+            <p>Year: {carInfo.year}</p>
+            <p>Price: ${carInfo.price}</p>
+            <p>overview: {carInfo.overview}</p>
+          </div>
+        </>
+      ) : (
+        <p>No car information found in localStorage.</p>
+      )}
     </div>
   );
 };

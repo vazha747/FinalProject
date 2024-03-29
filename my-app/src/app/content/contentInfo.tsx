@@ -34,24 +34,27 @@ const Home = () => {
 
     return () => clearTimeout(timer);
   }, [query]);
+
   const handleChange = (event) => {
     const searchQuery = event.target.value.toLowerCase();
     setQuery(searchQuery); // Update the query state
   };
+
   const router = useRouter();
 
   const handleInspect = (car) => {
-    // Navigate to the "/inspectPage" and pass car information as query parameters
-    router.push(
-      `/inspectPage/?make=${encodeURIComponent(
-        car.make
-      )}&model=${encodeURIComponent(car.model)}`
-    );
-  };
-
-  const handleSearch = () => {
-    // Handle search functionality
-    console.log("search");
+    const selectedCar = {
+      id: car.id,
+      make: car.make,
+      model: car.model,
+      year: car.year,
+      image: car.image,
+      price: car.price,
+      overview: car.overview,
+    };
+    console.log("Selected car ID:", selectedCar.id);
+    localStorage.setItem("selectedCar", JSON.stringify(selectedCar));
+    router.push("/inspectPage"); // Navigate to the inspect page
   };
 
   const handleClear = () => {
@@ -77,17 +80,12 @@ const Home = () => {
         <div className="flex items-center space-x-4">
           <input
             type="text"
+            name="input"
             placeholder="Search..."
             value={query} // Bind input value to query state
             onChange={handleChange}
             className="bg-gray-600 px-2 py-1 rounded-md focus:outline-none"
           />
-          <button
-            onClick={handleSearch}
-            className="bg-blue-500 text-white px-3 py-1 rounded-md"
-          >
-            Search
-          </button>
           <button
             onClick={handleClear}
             className="bg-red-500 text-white px-3 py-1 rounded-md"

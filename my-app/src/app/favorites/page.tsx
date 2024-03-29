@@ -2,14 +2,21 @@
 import React from 'react'
 import HeaderMain from "@/components/ui/headerForMainPage"
 import { useRouter } from "next/navigation";
-
+import { useEffect } from 'react';
 const Favorites = () => {
   const router = useRouter();
 
   // You would typically fetch the favorite cars data from somewhere, such as from a database or local storage
   // For demonstration purposes, let's assume you have a favorites array containing car objects
   const favorites = []; // Array of favorite cars
-
+  useEffect (() => {
+   const token = sessionStorage.getItem("token")
+   if (!token) {
+     location.href = "/login"
+   }
+  }, [router])
+  
+  
   return (
     <div>
       <HeaderMain />

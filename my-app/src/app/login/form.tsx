@@ -18,7 +18,8 @@ const LoginForm = () => {
       (username === "jumbera@gmail.com" && password === "tyabladzeli") ||
       (username === "admin@gmail.com" && password === "password")
     ) {
-      //    sessionStorage.setItem("token" , dummyToken);
+      const dummyToken = "dummyToken123"
+       sessionStorage.setItem("token" , dummyToken);
       router.push("/mainpage");
     } else {
       setError("Invalid username or password");
