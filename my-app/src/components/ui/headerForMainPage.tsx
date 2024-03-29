@@ -10,7 +10,7 @@ const Header = () => {
   const [query, setQuery] = useState("");
   const [filteredProducts, setFilteredProducts] = useState(cars);
 
-  const handleChange = (event) => {
+  const handleChange = (event: { target: { value: string; }; }) => {
     const searchQuery = event.target.value.toLowerCase();
     setQuery(searchQuery); // Update the query state
   };
@@ -31,7 +31,7 @@ const Header = () => {
 
   const router = useRouter();
 
-  const handleInspect = (car) => {
+  const handleInspect = (car: { make: string | number | boolean; model: string | number | boolean; }) => {
     // Navigate to the "/inspectPage" and pass car information as query parameters
     router.push(
       `/inspectPage/?make=${encodeURIComponent(

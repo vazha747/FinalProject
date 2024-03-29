@@ -11,7 +11,7 @@ const LoginForm = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
-  const handleLogin = (e) => {
+  const handleLogin = (e: { preventDefault: () => void; }): any => {
     e.preventDefault()
     // Check hardcoded credentials
     if (
