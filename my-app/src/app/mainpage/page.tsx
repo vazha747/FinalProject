@@ -4,7 +4,7 @@ import Info from '@/app/content/contentInfo'
 import { useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 
-const page = () => {
+const Page = () => {
    const router = useRouter()
    useEffect (() => {
     const token = sessionStorage.getItem("token")
@@ -22,4 +22,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

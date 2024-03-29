@@ -2,8 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
-import cars from "@/app/content/cars.json"; // Replace with your actual filename
+import cars from "@/app/content/cars.json"; 
 import Header from '@/components/ui/headerForMainPage'
 
 
@@ -18,7 +17,7 @@ const InspectPage = () => {
     }
    }, [router])
 
-  const [carId, setCarId] = useState(null);
+  const [carId, setCarId] = useState<string  | null>(null);
   const [carInfo, setCarInfo] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -34,7 +33,7 @@ const InspectPage = () => {
     if (id) {
       setIsLoading(true);
       setError(null);
-
+      
       const fetchCarData = async () => {
         try {
           const response = await fetch(`/api/cars/getById?id=${id}`); // Descriptive endpoint
@@ -44,7 +43,7 @@ const InspectPage = () => {
           const data = await response.json();
           setCarInfo(data);
         } catch (error) {
-          setError(error.message);
+        setError(error?.message); // Optional chaining operator
         } finally {
           setIsLoading(false);
         }

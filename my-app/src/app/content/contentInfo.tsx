@@ -35,14 +35,14 @@ const Home = () => {
     return () => clearTimeout(timer);
   }, [query]);
 
-  const handleChange = (event) => {
+  const handleChange = (event: { target: { value: string; }; }) => {
     const searchQuery = event.target.value.toLowerCase();
     setQuery(searchQuery); // Update the query state
   };
 
   const router = useRouter();
 
-  const handleInspect = (car) => {
+  const handleInspect = (car: { id: any; make: any; model: any; year: any; image: any; price: any; overview: any; }): any => {
     const selectedCar = {
       id: car.id,
       make: car.make,
