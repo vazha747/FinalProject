@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "make": "Toyota",
+    "model": "Corolla",
+    "year": 2020,
+    "image": "/img/1.jpg",
+    "price": 20000,
+    "overview": "The Toyota Corolla (Japanese: トヨタ・カローラ, Hepburn: Toyota Karōra) is a series of compact cars (formerly subcompact) manufactured and marketed globally by the Japanese automaker Toyota Motor Corporation. Introduced in 1966, the Corolla was the best-selling car worldwide by 1974 and has been one of the best-selling cars in the world since then. In 1997, the Corolla became the best-selling nameplate in the world, surpassing the Volkswagen Beetle.[1] Toyota reached the milestone of 50 million Corollas sold over twelve generations in 2021.[2] The name Corolla is part of Toyota's naming tradition of using names derived from the Toyota Crown for sedans, with corolla Latin for small crown. The Corolla has always been exclusive in Japan to Toyota Corolla Store locations, and manufactured in Japan with a twin, called the Toyota Sprinter until 2000. From 2006 to 2018 in Japan and much of the world, and from 2018 to 2020 in Taiwan, the hatchback companion had been called the Toyota Auris.  Early models were mostly rear-wheel drive, while later models have been front-wheel drive. Four-wheel drive versions have also been produced, and it has undergone several major redesigns. The Corolla's traditional competitors have been the Nissan Sunny, introduced the same year as the Corolla in Japan and the later Nissan Sentra, Nissan Sylphy, Honda Civic and Mitsubishi Lancer. The Corolla's chassis designation code is E, as described in Toyota's chassis and engine codes."
+  },
+  {
+    "id": 2,
+    "make": "Honda",
+    "model": "Civic",
+    "year": 2018,
+    "image": "/img/2.jpg",
+    "price": 18000,
+    "overview": "The Honda Civic (Japanese: ホンダ・シビック, Hepburn: Honda Shibikku) is a series of automobiles manufactured by Honda since 1972. As of 2023, the Civic is positioned between the Honda Fit/City and Honda Accord in Honda's global car line-up. The first-generation Civic was introduced in July 1972 as a two-door fastback sedan,[2] followed by a three-door hatchback that September. With a 1,169 cc transverse engine and front-wheel drive like the British Mini, the car provided good interior space despite overall small dimensions.[3] Initially gaining a reputation for being fuel-efficient, reliable and environmentally friendly, later iterations have become known for performance and sportiness, especially the Civic Type R, Civic VTi, Civic GTi and Civic SiR/Si.[4][5] The Civic has been repeatedly rebadged for international markets, and served as the basis for the Honda CR-X, the Honda CR-X del Sol, the Concerto, the first generation Prelude, the Civic Shuttle (later to become the Orthia) and the CR-V (which, by extension, was used as the basis for the Honda FR-V).[6] The Civic is one of the all-time best-selling automobiles in the world, with over 27 million units sold since 1972 as of 2021."
+  },
+  {
+    "id": 3,
+    "make": "Ford",
+    "model": "Focus",
+    "year": 2019,
+    "image": "/img/3.jpg",
+    "price": 40000,
+    "overview": "The Ford Focus is a compact car (C-segment in Europe) manufactured by Ford Motor Company since 1999. It was created under Alexander Trotman's Ford 2000 plan, which aimed to globalize model development and sell one compact vehicle worldwide. The original Focus was primarily designed by Ford of Europe's German and British teams.[1] Production of the fourth generation Focus began in 2018 in Germany and China."
+  },
+  {
+    "id": 4,
+    "make": "Chevrolet",
+    "model": "Malibu",
+    "year": 2017,
+    "image": "/img/4.jpg",
+    "price": 17000,
+    "overview": "The Chevrolet Malibu is a mid-size car manufactured and marketed by Chevrolet from model years 1964-1983 and since 1997. The Malibu began as a trim-level of the Chevrolet Chevelle, becoming its own model line in 1978. Originally a rear-wheel drive intermediate, GM revived the Malibu nameplate as a front-wheel-drive car in 1997.[1] Named after the coastal community of Malibu, California, the Malibu was marketed primarily in North America, with the eighth generation introduced globally. With the discontinuation of the compact Cruze in March 2019, the full-size Impala in March 2020 and the subcompact Sonic in October 2020, the Malibu is currently the only sedan offered by Chevrolet in the U.S."
+  },
+  {
+    "id": 5,
+    "make": "Nissan",
+    "model": "Altima",
+    "year": 2016,
+    "image": "/img/5.jpg",
+    "price": 15000,
+    "overview": "The Nissan Altima is a mid-size car manufactured by Nissan since 1992. It is a continuation of the Nissan Bluebird line, which began in 1955. The Altima has historically been larger, more powerful, and more luxurious than the Nissan Sentra but less so than the Nissan Maxima. The first through fourth-generation cars were manufactured exclusively in the United States and officially sold in North and South America, along with the Middle East and Australia. For other markets, Nissan sold a related mid-size sedan called the Nissan Teana which was between the Altima and Maxima in terms of size. In 2013, the Teana became a rebadged version of the fifth-generation Altima. The name Altima was originally applied to a top trim line of the Nissan Leopard for the Japanese market in 1986,[1] and then to the Nissan Laurel mid-size car sold in Central America and the Caribbean before 1992. In 1992, Nissan discontinued the Stanza which was a Nissan Bluebird clone, replacing it with the US-built Altima, while remaining a compact car. The first Altima was produced in June 1992, as a 1993 model. All Altima models for the North American market were built in Smyrna, Tennessee, until June 2004, when Nissan's Canton, Mississippi plant also began producing the model to meet high demand."
+  },
+  {
+    "id": 6,
+    "make": "BMW",
+    "model": "3 Series",
+    "year": 2021,
+    "image": "/img/6.jpg",
+    "price": 35000,
+    "overview": "The BMW 3 Series is a line of compact executive cars manufactured by the German automaker BMW since May 1975. It is the successor to the 02 Series and has been produced in seven generations. The first generation of the 3 Series was only available as a 2-door saloon; the model range expanded to include a 4-door saloon, 2-door convertible, 2-door coupé, 5-door estate, 5-door liftback (Gran Turismo) and 3-door hatchback body styles. Since 2013, the coupé and convertible models have been marketed as the 4 Series, styles no longer included in the 3 Series. The 3 Series is BMW's best-selling model, accounting for around 30% of the BMW brand's annual total car sales,[1] and has won numerous awards throughout its history. The M version of the 3 series, M3, debuted with the E30 M3 in 1986."
+  },
+  {
+    "id": 7,
+    "make": "Mercedes-Benz",
+    "model": "C-Class",
+    "year": 2019,
+    "image": "/img/7.jpg",
+    "price": 40000,
+    "overview": "The Mercedes-Benz C-Class is a series of compact executive cars produced by Mercedes-Benz Group AG. Introduced in 1993 as a replacement for the 190 (W201) range, the C-Class was the smallest model in the marque's line-up until the W168 A-Class arrived in 1997. The C-Class has been available with a 4MATIC four-wheel drive option since 2002. The third generation (W204) was launched in 2007 while the current W206 generation was launched in 2021. Initially available in sedan and a station wagon configurations, a fastback coupé (SportCoupé) variant followed and was later renamed to Mercedes-Benz CLC-Class. It remained in production until 2011 when a new W204 C-Class coupé replaced it for the 2012 model year."
+  },
+  {
+    "id": 8,
+    "make": "Audi",
+    "model": "A4",
+    "year": 2018,
+    "image": "/img/8.jpg",
+    "price": 32000,
+    "overview": "The Audi A4 is a line of luxury compact executive cars produced since 1994 by the German car manufacturer Audi, a subsidiary of the Volkswagen Group. The A4 has been built in five generations and is based on the Volkswagen Group B platform. The first generation A4 succeeded the Audi 80. The automaker's internal numbering treats the A4 as a continuation of the Audi 80 lineage, with the initial A4 designated as the B5-series, followed by the B6, B7, B8, and the B9. The B8 and B9 versions of the A4 are built on the Volkswagen Group MLB platform shared with several models and brands across the Volkswagen Group. The Audi A4 automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine. The cars are front-wheel drive, or on some models, quattro all-wheel drive. The A4 is available as a sedan and station wagon. Historically, the second (B6) and third generations (B7) of the A4 also included a convertible version. For the fourth generation (B8) and onwards, the convertible, along with a new coupé and 5-door liftback variant, was spun-off by Audi into a new nameplate called the Audi A5."
+  },
+  {
+    "id": 9,
+    "make": "Hyundai",
+    "model": "Elantra",
+    "year": 2020,
+    "image": "/img/9.jpg",
+    "price": 17000,
+    "overview": "The Hyundai Elantra, also known as the Hyundai Avante (Korean: 현대 아반떼), is a compact car produced by the South Korean manufacturer Hyundai since 1990. The Elantra was initially marketed as the Lantra in Australia and some European markets. In Australia, this was due to the similarly named Mitsubishi Magna Elante model;[1] similarly, in other markets, the name Avante is not used due to its similarity with Audi's Avant designation, which is used for their line-up of station wagons.[2] The name was standardized as Elantra worldwide in 2001 (except in South Korea and Singapore)."
+  },
+  {
+    "id": 10,
+    "make": "Kia",
+    "model": "Optima",
+    "year": 2017,
+    "image": "/img/10.jpg",
+    "price": 16000,
+    "overview": "The Kia K5, formerly known as the Kia Optima, is a mid-size car manufactured by Kia since 2000 and marketed globally through various nameplates. First generation cars were mostly marketed as the Optima, although the Kia Magentis name was used in Europe and Canada when sales began there in 2002. For the second-generation models, Kia used the Kia Lotze and Kia K5 name for the South Korean market, and the Magentis name globally, except in the United States, Canada, Malaysia and the Middle East, where the Optima name was retained until the 2021 model year. The K5 name is used for all markets since the introduction of the fifth generation in 2019."
+  }
+]
